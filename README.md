@@ -1,20 +1,20 @@
 # JSON Markdown Table
 
-An node module that creates markdown tables containing formatted JSON data, perfect for Yadda test cases.
+A simple app providing a UI allowing users to create markdown tables containing JSON data. Leverages [json-markdown-table](https://github.com/macklevine/json-markdown-table).
 
 ## Installation
 
-pending: npm install json-markdown-table
+```
+git clone
+cd server
+npm install
+gulp dev
+localhost:8123
+```
 
 ## Usage
 
-TODO: Write usage instructions
-
 ## Contributing
-
-## History
-
-TODO: Write history
 
 ## Credits
 

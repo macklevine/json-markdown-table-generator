@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-develop-server": "^0.5.1",
     "less": "^2.6.1",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "jsonmarkdowntable": "https://github.com/macklevine/json-markdown-table.git"
   }
 }

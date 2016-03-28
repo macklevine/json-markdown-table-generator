@@ -1,18 +1,17 @@
 'use strict';
 
 var RouteConfigurator = function RouteConfigurator(){};
-var JSONMarkdownService = require('../jsonmarkdownservice.js');
+var JSONMarkdownTable = require('jsonmarkdowntable')
 
 RouteConfigurator.prototype.configureRoutes = function configureRoutes(app){
 	app.post('/sendFields', function(req, res){
-		JSONMarkdownService.createJSONMarkdownTable(req.body)
-			.then(function(markdownTableString){
-				//maybe write a saved markdown to a database.
-				res.status(200).send(markdownTableString);
-			})
-			.catch(function(error){
-				res.status(200).send(error);
-			});
+		JSONMarkdownTable.createJSONMarkdownTable(req.body, function(err, response){
+			if(err){
+				res.send(err.message);
+			} else {
+				res.status(200).send(response);
+			}
+		});
 	});
 };
 

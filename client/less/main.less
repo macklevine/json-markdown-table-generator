@@ -1,14 +1,27 @@
 @cellheight: 30px;
 @cellwidth: 100px;
 
-.tablebox {
-	font-family: monospace;
-  min-height: 400px;
-  width: 100%;
+
+.form-wrapper {
+	.form-buttons {
+		padding-top: 10px;
+	}
+	.submit-button {
+		padding-top: 10px;
+	}
+}
+.tablebox-wrapper {
+	padding-top: 10px;
+	.tablebox {
+		font-family: monospace;
+		min-height: 400px;
+		width: 100%;
+	}
 }
 .datacell {
-  height: @cellheight;
-  width: @cellwidth;
+	margin: 4px 4px 4px 4px;
+	height: @cellheight;
+	width: @cellwidth;
 }
 .errorresponse {
   color: red,

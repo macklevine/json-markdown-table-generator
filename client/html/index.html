@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<script src="js/bundle.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="json markdown table generator">
+    <meta name="author" content="Mack Levine">
+    <link rel="icon" href="../../favicon.ico">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
+	<script src="js/bundle.js"></script>
+    <title>JSON Markdown Table Generator</title>
+  </head>
 
-<div ng-app="inputModule" ng-controller="inputController">
-	<form name="headerForm">
-		<div class="row" ng-repeat="row in inputRows">
-	 		<input class="datacell" type="text" default-value="cell.value" ng-model="cell.value" ng-repeat="cell in row">
-	 	</div>
- 		<button ng-click="addColumn()">add column</button>
- 		<button ng-click="removeColumn()">remove column</button>
- 		<button ng-click="addRow()">add row</button>
- 		<button ng-click="removeRow()">remove row</button>
- 		<button ng-click="submitCells()">Generate Table</button>
- 	</form>
- 	<div>
- 		<textarea class="tablebox" ng-class="{'errorresponse':errorResponse}" readonly>{{textAreaVal}}</textarea>
- 	</div>
-  <div>
-    <a href="http://www.github.com/macklevine">by Mack Levine</a>
-  </div>
-</div>
+  <body>
 
-</body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">JSON Markdown Table Generator</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>JSON Markdown Table</h1>
+        <ng-view></ng-view>
+      </div>
+    </div>
+  </body>
 </html>

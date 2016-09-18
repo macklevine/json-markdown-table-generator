@@ -14,6 +14,7 @@ gulp.task('default', ['compile-less', 'build-javascript-dev', 'scoot-templates',
 gulp.task('compile-less', function(){
 	return gulp.src([
   		'./client/less/*.less',
+  		'./client/less/*.css',
 		'./bower_components/bootstrap/dist/css/bootstrap.css',
 	])
 	.pipe(less())

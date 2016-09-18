@@ -14,9 +14,11 @@
     "chai": "^3.5.0",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-develop-server": "^0.5.1",
+    "gulp-uglify": "^2.0.0",
+    "jsonmarkdowntable": "https://github.com/macklevine/json-markdown-table.git",
     "less": "^2.6.1",
-    "underscore": "^1.8.3",
-    "jsonmarkdowntable": "https://github.com/macklevine/json-markdown-table.git"
+    "underscore": "^1.8.3"
   }
 }

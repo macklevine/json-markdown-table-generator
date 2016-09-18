@@ -9,7 +9,7 @@ var app = express();
 app.use(bodyParser.json());
 console.log(__dirname);
 
-app.use(express.static(__dirname + "/../client/js/"));
+app.use(express.static(__dirname + "/../client/build/"));
 //configure routes
 router.configureRoutes(app);
 

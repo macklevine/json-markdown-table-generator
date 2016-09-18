@@ -1,29 +1,34 @@
 'use strict';
 
 var gulp = require('gulp');
-var less = require('less');
+var less = require('gulp-less');
 var fs = require('fs');
 var server = require('gulp-develop-server');
 var minify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var concatCss = require('gulp-concat-css');
 
 //set up the watchers only once.
 gulp.task('default', ['compile-less', 'build-javascript-dev', 'scoot-templates', 'start-server', 'watch-for-changes']);
 
 gulp.task('compile-less', function(){
-	fs.readFile('./client/less/main.less', 'utf-8', function (e, contents){
-		less.render(contents, function (e, output){
-			fs.writeFile('./client/build/main.css', output.css);
-		});
-	});
+	return gulp.src([
+  		'./client/less/*.less',
+		'./bower_components/bootstrap/dist/css/bootstrap.css',
+	])
+	.pipe(less())
+	.pipe(concatCss("styles.css", {
+		rebaseUrls : false
+	}))
+	.pipe(gulp.dest('./client/build/'));
 });
 
 var javaScriptSources = [
 	'./bower_components/angular/angular.js',
 	'./bower_components/jquery/jquery.js',
+	'./bower_components/bootstrap/boostrap.js',
 	'./client/js/**/*.js'
 ];
-
 
 gulp.task('build-javascript-dev', function() {
   return gulp.src(javaScriptSources)

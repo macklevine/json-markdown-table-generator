@@ -27,8 +27,8 @@ angular.module('jsonMarkdownApp')
         }
       });
   }
-  $scope.addColumn = function removeColumn(){
-    //TODO: establish a max and min column count.
+  $scope.addColumn = function addColumn(){
+    //TODO: add limit
     for (var i = 0; i < $scope.inputRows.length; i++){
       $scope.inputRows[i].push({
         value: ""
@@ -36,23 +36,26 @@ angular.module('jsonMarkdownApp')
     }
   };
   $scope.removeColumn = function removeColumn(){
-    //TODO: establish a max and min column count.
-    for(var i = 0; i < $scope.inputRows.length; i++){
-      $scope.inputRows[i].pop();
+    if($scope.inputRows[0] && $scope.inputRows[0].length >= 2){
+      for(var i = 0; i < $scope.inputRows.length; i++){
+        $scope.inputRows[i].pop();
+      }
     }
   }
   $scope.addRow = function addRow(){
-    var rowToAdd = [];
-    for(var i = 0; i < $scope.inputRows[0].length; i++){
-      rowToAdd.push({
-        value: ""
-      });
+    if($scope.inputRows.length < 100){
+      var rowToAdd = [];
+      for(var i = 0; i < $scope.inputRows[0].length; i++){
+        rowToAdd.push({
+          value: ""
+        });
+      }
+      $scope.inputRows.push(rowToAdd);
     }
-    $scope.inputRows.push(rowToAdd);
-    //TODO: establish a max and min row count.
   };
   $scope.removeRow = function removeRow(){
-    $scope.inputRows.pop();
-    //TODO: extablish a max and min row count.
+    if($scope.inputRows && $scope.inputRows.length >=3){
+      $scope.inputRows.pop();
+    }
   };
 }]);

@@ -1,5 +1,5 @@
-angular.module('input.inputServices', [])
-	.factory('InputService', function ($http, $q){
+angular.module('jsonMarkdownApp')
+	.factory('InputService', ['$http', '$q', function ($http, $q){
 		var sendInputData = function(data){
 			return $http.post('/sendfields', data)
 				.then(function(response){
@@ -13,4 +13,4 @@ angular.module('input.inputServices', [])
 		return {
 			sendInputData : sendInputData
 		};
-	});
+	}]);

@@ -25,9 +25,10 @@ gulp.task('compile-less', function(){
 });
 
 var javaScriptSources = [
-	'./bower_components/angular/angular.js',
 	'./bower_components/jquery/jquery.js',
-	'./bower_components/bootstrap/boostrap.js',
+	'./bower_components/angular/angular.js',
+	'./bower_components/angular-route/angular-route.js',
+	'./bower_components/bootstrap/bootstrap.js',
 	'./client/js/**/*.js'
 ];
 

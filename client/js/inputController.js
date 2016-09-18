@@ -1,5 +1,5 @@
-angular.module('input.inputController', [])
-  .controller('inputController', function ($scope, InputService){
+angular.module('jsonMarkdownApp')
+  .controller('InputController', ['$scope', 'InputService', function ($scope, InputService){
   $scope.inputRows = [
     [
       {value:'header1'}, 
@@ -55,4 +55,4 @@ angular.module('input.inputController', [])
     $scope.inputRows.pop();
     //TODO: extablish a max and min row count.
   };
-});
+}]);

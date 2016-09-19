@@ -11,7 +11,7 @@ angular.module('jsonMarkdownApp')
     ]
   ];
   $scope.errorResponse = false;
-  $scope.textAreaVal = "table will show up here...";
+  $scope.textAreaVal = "";
   //initialize columns here.
   $scope.submitCells = function submitCells(){
     InputService.sendInputData($scope.inputRows)

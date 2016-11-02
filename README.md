@@ -8,7 +8,7 @@ A simple app providing a UI allowing users to create markdown tables containing 
 git clone
 cd server
 npm install
-gulp dev
+gulp
 localhost:8123
 ```
 
